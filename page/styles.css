@@ -1,0 +1,45 @@
+html {
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 1.3em;
+  max-width: 40rem;
+  padding: 2rem;
+  margin: auto;
+  line-height: 1.5rem;
+}
+
+header {
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.calculator-display-container {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 0.5rem 0 0.5rem 0;
+  min-height: 1.5rem;
+  text-align: right;
+  width: 100%;
+}
+
+.calculator-display {
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  text-align: right;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 0.3rem;
+  grid-column-gap: 0.3rem;
+  width: 100%;
+
+  .function-button {
+    background: rgb(218, 220, 224);
+  }
+}
