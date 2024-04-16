@@ -1,7 +1,7 @@
 html {
   font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-size: 1.3em;
-  max-width: 40rem;
+  max-width: 30rem;
   padding: 2rem;
   margin: auto;
   line-height: 1.5rem;
@@ -14,32 +14,42 @@ header {
 button {
   cursor: pointer;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   padding: 0.5rem;
 }
 
-.calculator-display-container {
-  border: 1px solid black;
-  border-radius: 5px;
-  margin: 0.5rem 0 0.5rem 0;
-  min-height: 1.5rem;
-  text-align: right;
-  width: 100%;
-}
+.calculator {
+  max-width: 30rem;
 
-.calculator-display {
-  margin: 0.5rem 0.5rem 0.5rem 0;
-  text-align: right;
-}
-
-.keypad {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-row-gap: 0.3rem;
-  grid-column-gap: 0.3rem;
-  width: 100%;
-
-  .function-button {
-    background: rgb(218, 220, 224);
+  .calculator-display-container {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0.5rem 0 0.5rem 0;
+    min-height: 1.5rem;
+    text-align: right;
+    width: 100%;
+  }
+  
+  .calculator-display {
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    text-align: right;
+  }
+  
+  .keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 0.7rem;
+    grid-column-gap: 2rem;
+    width: 100%;
+    color: rgb(32, 33, 36);
+    font-size: 18px;
+  
+    .function-button {
+      background: rgb(218, 220, 224);
+    }
+  
+    .number-button {
+      background: rgb(241, 243, 244);
+    }
   }
 }
