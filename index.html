@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AskUI Practice Page</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/scripts.js" defer></script>
+    <link id="light-theme" rel="stylesheet" href="css/styles.css">
+    <link id="dark-theme" rel="stylesheet" href="css/styles-dark.css" disabled>
+    <link id="calculator-light-theme" rel="stylesheet" href="css/styles-calculator.css">
+    <link id="calculator-dark-theme" rel="stylesheet" href="css/styles-calculator-dark.css" disabled>
+    <script src="js/scripts-theme.js" defer></script>
+    <script src="js/scripts-calculator.js" defer></script>
 </head>
 <body>
+    <div id="dark-light-switch" class="dark-light-switch">
+      <button>Switch to Dark</button>
+    </div>
     <header>
         Welcome to the AskUI Practice Page
     </header>

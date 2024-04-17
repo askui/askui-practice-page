@@ -5,6 +5,8 @@ html {
   padding: 2rem;
   margin: auto;
   line-height: 1.5rem;
+  background-color: black;
+  color: rgb(241, 243, 244);
 }
 
 header {
