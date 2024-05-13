@@ -1,3 +1,8 @@
+
+.spacing{
+    height: 20px;
+  }
+
 .drag-drop-container {
     display: flex;
     flex-direction: row;
