@@ -8,8 +8,10 @@
     <link id="dark-theme" rel="stylesheet" href="css/styles-dark.css" disabled>
     <link id="calculator-light-theme" rel="stylesheet" href="css/styles-calculator.css">
     <link id="calculator-dark-theme" rel="stylesheet" href="css/styles-calculator-dark.css" disabled>
+    <link rel="stylesheet" href="css/styles-drag-drop.css">
     <script src="js/scripts-theme.js" defer></script>
     <script src="js/scripts-calculator.js" defer></script>
+    <script src="js/scripts-drag-drop.js" defer></script>
 </head>
 <body>
     <div id="dark-light-switch" class="dark-light-switch">
@@ -46,6 +48,13 @@
             <button class="function-button">+</button>
           </div>
         </div>
+        <div id="drag-drop-container" class="drag-drop-container">
+          <div id="div1" class="droppable" ondrop="drop(event)" ondragover="allowDrop(event)">
+            Drop here
+          </div>
+        
+        <img id="drag1" src="askui-logo.svg" draggable="true" ondragstart="drag(event)" width="300" height="60">
+      </div>
     </main>
     <footer>
         <!-- Add your footer content here -->
