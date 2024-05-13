@@ -1,54 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AskUI Practice Page</title>
-    <link id="light-theme" rel="stylesheet" href="css/styles.css">
-    <link id="dark-theme" rel="stylesheet" href="css/styles-dark.css" disabled>
-    <link id="calculator-light-theme" rel="stylesheet" href="css/styles-calculator.css">
-    <link id="calculator-dark-theme" rel="stylesheet" href="css/styles-calculator-dark.css" disabled>
-    <script src="js/scripts-theme.js" defer></script>
-    <script src="js/scripts-calculator.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AskUI Practice Page</title>
+  <link id="light-theme" rel="stylesheet" href="css/styles.css">
+  <link id="dark-theme" rel="stylesheet" href="css/styles-dark.css" disabled>
+  <link id="calculator-light-theme" rel="stylesheet" href="css/styles-calculator.css">
+  <link id="calculator-dark-theme" rel="stylesheet" href="css/styles-calculator-dark.css" disabled>
+  <link rel="stylesheet" href="css/styles-drag-drop.css">
+  <script src="js/scripts-theme.js" defer></script>
+  <script src="js/scripts-calculator.js" defer></script>
+  <script src="js/scripts-drag-drop.js" defer></script>
 </head>
+
 <body>
-    <div id="dark-light-switch" class="dark-light-switch">
-      <button>Switch to Dark</button>
+  <div id="dark-light-switch" class="dark-light-switch">
+    <button>Switch to Dark</button>
+  </div>
+  <header>
+    Welcome to the AskUI Practice Page
+  </header>
+  <main>
+    <div id="calculator" class="calculator">
+      <div class="calculator-display-container">
+        <div id="calculator-display" class="calculator-display">0</div>
+      </div>
+      <div class="keypad">
+        <button class="function-button">(</button>
+        <button class="function-button">)</button>
+        <button class="function-button">%</button>
+        <button class="function-button">CE</button>
+        <button class="number-button">7</button>
+        <button class="number-button">8</button>
+        <button class="number-button">9</button>
+        <button class="function-button">/</button>
+        <button class="number-button">4</button>
+        <button class="number-button">5</button>
+        <button class="number-button">6</button>
+        <button class="function-button">*</button>
+        <button class="number-button">1</button>
+        <button class="number-button">2</button>
+        <button class="number-button">3</button>
+        <button class="function-button">-</button>
+        <button class="number-button">0</button>
+        <button class="number-button">.</button>
+        <button class="function-button">=</button>
+        <button class="function-button">+</button>
+      </div>
     </div>
-    <header>
-        Welcome to the AskUI Practice Page
-    </header>
-    <main>
-        <div id="calculator" class="calculator">
-          <div class="calculator-display-container">
-            <div id="calculator-display" class="calculator-display">0</div>
-          </div>
-          <div class="keypad">
-            <button class="function-button">(</button>
-            <button class="function-button">)</button>
-            <button class="function-button">%</button>
-            <button class="function-button">CE</button>
-            <button class="number-button">7</button>
-            <button class="number-button">8</button>
-            <button class="number-button">9</button>
-            <button class="function-button">/</button>
-            <button class="number-button">4</button>
-            <button class="number-button">5</button>
-            <button class="number-button">6</button>
-            <button class="function-button">*</button>
-            <button class="number-button">1</button>
-            <button class="number-button">2</button>
-            <button class="number-button">3</button>
-            <button class="function-button">-</button>
-            <button class="number-button">0</button>
-            <button class="number-button">.</button>
-            <button class="function-button">=</button>
-            <button class="function-button">+</button>
-          </div>
-        </div>
-    </main>
-    <footer>
-        <!-- Add your footer content here -->
-    </footer>
+    <hr>
+    <div id="drag-drop-container" class="drag-drop-container">
+      <div id="div1" class="droppable" ondrop="drop(event)" ondragover="allowDrop(event)">
+        Drop here
+      </div>
+      <img id="drag1" src="askui-logo.svg" draggable="true" ondragstart="drag(event)" width="300" height="60">
+    </div>
+  </main>
+  <footer>
+    <!-- Add your footer content here -->
+  </footer>
 </body>
+
 </html>
