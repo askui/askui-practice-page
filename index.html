@@ -10,9 +10,13 @@
   <link id="calculator-light-theme" rel="stylesheet" href="css/styles-calculator.css">
   <link id="calculator-dark-theme" rel="stylesheet" href="css/styles-calculator-dark.css" disabled>
   <link rel="stylesheet" href="css/styles-drag-drop.css">
+  <link rel="stylesheet" href="css/styles-navigation.css">
+  <link rel="stylesheet" href="css/styles-form.css">
   <script src="js/scripts-theme.js" defer></script>
   <script src="js/scripts-calculator.js" defer></script>
   <script src="js/scripts-drag-drop.js" defer></script>
+  <script src="js/scripts-navigation.js" defer></script>
+  <script src="js/scripts-form.js" defer></script>
 </head>
 
 <body>
@@ -22,41 +26,98 @@
   <header>
     Welcome to the AskUI Practice Page
   </header>
+
+  <nav>
+    <ul class="navbar">
+      <li id="form-nav" class="selected"><a href="#form-page" onclick="showFormPage()">Register</a></li>
+      <li id="calculator-nav"><a href="#calculator-drag-drop-page" onclick="showCalculatorPage()">Calculator</a></li>
+      <li id="images-nav"><a href="#images-page" onclick="showImagesPage()">Images</a></li>
+    </ul>
+  </nav>
+
   <main>
-    <div id="calculator" class="calculator">
-      <div class="calculator-display-container">
-        <div id="calculator-display" class="calculator-display">0</div>
-      </div>
-      <div class="keypad">
-        <button class="function-button">(</button>
-        <button class="function-button">)</button>
-        <button class="function-button">%</button>
-        <button class="function-button">CE</button>
-        <button class="number-button">7</button>
-        <button class="number-button">8</button>
-        <button class="number-button">9</button>
-        <button class="function-button">/</button>
-        <button class="number-button">4</button>
-        <button class="number-button">5</button>
-        <button class="number-button">6</button>
-        <button class="function-button">*</button>
-        <button class="number-button">1</button>
-        <button class="number-button">2</button>
-        <button class="number-button">3</button>
-        <button class="function-button">-</button>
-        <button class="number-button">0</button>
-        <button class="number-button">.</button>
-        <button class="function-button">=</button>
-        <button class="function-button">+</button>
+    <div id="form-page" class="page">
+      <div class="form-container">
+        <form id="myForm">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your full name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email address" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password" name="password" required>
+          </div>
+          <div class="form-group">
+            <label for="otp">OTP:</label>
+            <input type="text" id="otp" placeholder="Enter your OTP" name="otp" required>
+          </div>
+          <div class="form-group">
+            <label for="interests">Profile:</label>
+            <input type="checkbox" id="interest1" name="interest1">
+            <label for="interest1">Developer</label>
+            <input type="checkbox" id="interest2" name="interest2">
+            <label for="interest2">Designer</label>
+            <input type="checkbox" id="interest3" name="interest3">
+            <label for="interest3">Analyst</label>
+          </div>
+          <div class="form-group">
+            <label class="subscribe-label">Subscribe to AskUI:</label>
+            <label class="toggle-switch">
+              <input type="checkbox" unchecked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="form-group">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+            <div id="success-message" class="success-message"></div>
+          </div>
+        </form>
       </div>
     </div>
-    <hr>
-    <div id="drag-drop-container" class="drag-drop-container">
-      <div id="div1" class="droppable" ondrop="drop(event)" ondragover="allowDrop(event)">
-        Drop here
+
+    <div id="calculator-drag-drop-page" class="page">
+      <div id="calculator" class="calculator">
+        <div class="calculator-display-container">
+          <div id="calculator-display" class="calculator-display">0</div>
+        </div>
+        <div class="keypad">
+          <button class="function-button">(</button>
+          <button class="function-button">)</button>
+          <button class="function-button">%</button>
+          <button class="function-button">CE</button>
+          <button class="number-button">7</button>
+          <button class="number-button">8</button>
+          <button class="number-button">9</button>
+          <button class="function-button">/</button>
+          <button class="number-button">4</button>
+          <button class="number-button">5</button>
+          <button class="number-button">6</button>
+          <button class="function-button">*</button>
+          <button class="number-button">1</button>
+          <button class="number-button">2</button>
+          <button class="number-button">3</button>
+          <button class="function-button">-</button>
+          <button class="number-button">0</button>
+          <button class="number-button">.</button>
+          <button class="function-button">=</button>
+          <button class="function-button">+</button>
+        </div>
       </div>
-      <img id="drag1" src="askui-logo.svg" draggable="true" ondragstart="drag(event)" width="300" height="60">
+      <hr>
+      <div id="drag-drop-container" class="drag-drop-container">
+        <div id="div1" class="droppable" ondrop="drop(event)" ondragover="allowDrop(event)">
+          Drop here
+        </div>
+        <img id="drag1" src="askui-logo.svg" draggable="true" ondragstart="drag(event)" width="300" height="60">
+      </div>
     </div>
+
+    <div id="images-page"></div>
   </main>
   <footer>
     <!-- Add your footer content here -->
