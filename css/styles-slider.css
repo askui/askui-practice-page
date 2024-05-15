@@ -1,0 +1,35 @@
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  margin-top: 20px;
+}
+
+.slide {
+  scroll-snap-align: start;
+  flex: 0 0 100%;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+}
+
+.slide-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.slide-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.slide-indicator.active {
+  background-color: #973cbd;
+}

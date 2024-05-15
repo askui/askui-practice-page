@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("myForm");
+  const register = document.getElementById("register");
   const successMessage = document.getElementById("success-message");
-  const resetButton = form.querySelector('button[type="reset"]');
+  const resetButton = register.querySelector('button[type="reset"]');
 
-  form.addEventListener("submit", function (event) {
+  register.addEventListener("submit", function (event) {
     event.preventDefault();
 
     successMessage.textContent = "Successfully submitted!";

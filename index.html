@@ -11,12 +11,14 @@
   <link id="calculator-dark-theme" rel="stylesheet" href="css/styles-calculator-dark.css" disabled>
   <link rel="stylesheet" href="css/styles-drag-drop.css">
   <link rel="stylesheet" href="css/styles-navigation.css">
-  <link rel="stylesheet" href="css/styles-form.css">
+  <link rel="stylesheet" href="css/styles-register.css">
+  <link rel="stylesheet" href="css/styles-slider.css">
   <script src="js/scripts-theme.js" defer></script>
   <script src="js/scripts-calculator.js" defer></script>
   <script src="js/scripts-drag-drop.js" defer></script>
   <script src="js/scripts-navigation.js" defer></script>
-  <script src="js/scripts-form.js" defer></script>
+  <script src="js/scripts-register.js" defer></script>
+  <script src="js/scripts-slider.js" defer></script>
 </head>
 
 <body>
@@ -29,57 +31,14 @@
 
   <nav>
     <ul class="navbar">
-      <li id="form-nav" class="selected"><a href="#form-page" onclick="showFormPage()">Register</a></li>
-      <li id="calculator-nav"><a href="#calculator-drag-drop-page" onclick="showCalculatorPage()">Calculator</a></li>
+      <li id="calculator-nav" class="selected"><a href="#calculator-drag-drop-page"
+          onclick="showCalculatorPage()">Calculator</a></li>
+      <li id="register-nav"><a href="#register-page" onclick="showRegisterPage()">Register</a></li>
       <li id="images-nav"><a href="#images-page" onclick="showImagesPage()">Images</a></li>
     </ul>
   </nav>
 
   <main>
-    <div id="form-page" class="page">
-      <div class="form-container">
-        <form id="myForm">
-          <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" placeholder="Enter your full name" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" placeholder="Enter your email address" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" placeholder="Enter your password" name="password" required>
-          </div>
-          <div class="form-group">
-            <label for="otp">OTP:</label>
-            <input type="text" id="otp" placeholder="Enter your OTP" name="otp" required>
-          </div>
-          <div class="form-group">
-            <label for="interests">Profile:</label>
-            <input type="checkbox" id="interest1" name="interest1">
-            <label for="interest1">Developer</label>
-            <input type="checkbox" id="interest2" name="interest2">
-            <label for="interest2">Designer</label>
-            <input type="checkbox" id="interest3" name="interest3">
-            <label for="interest3">Analyst</label>
-          </div>
-          <div class="form-group">
-            <label class="subscribe-label">Subscribe to AskUI:</label>
-            <label class="toggle-switch">
-              <input type="checkbox" unchecked>
-              <span class="slider"></span>
-            </label>
-          </div>
-          <div class="form-group">
-            <button type="submit">Submit</button>
-            <button type="reset">Reset</button>
-            <div id="success-message" class="success-message"></div>
-          </div>
-        </form>
-      </div>
-    </div>
-
     <div id="calculator-drag-drop-page" class="page">
       <div id="calculator" class="calculator">
         <div class="calculator-display-container">
@@ -113,11 +72,71 @@
         <div id="div1" class="droppable" ondrop="drop(event)" ondragover="allowDrop(event)">
           Drop here
         </div>
-        <img id="drag1" src="askui-logo.svg" draggable="true" ondragstart="drag(event)" width="300" height="60">
+        <img id="drag1" src="images/askui-logo.svg" draggable="true" ondragstart="drag(event)" width="300" height="60">
       </div>
     </div>
 
-    <div id="images-page"></div>
+    <div id="register-page" class="page">
+      <div class="register-container">
+        <form id="register">
+          <div class="register-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your full name" name="name" required>
+          </div>
+          <div class="register-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email address" name="email" required>
+          </div>
+          <div class="register-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password" name="password" required>
+          </div>
+          <div class="register-group">
+            <label for="otp">OTP:</label>
+            <input type="text" id="otp" placeholder="Enter your OTP" name="otp" required>
+          </div>
+          <div class="register-group">
+            <label for="interests">Profile:</label>
+            <input type="checkbox" id="interest1" name="interest1">
+            <label for="interest1">Developer</label>
+            <input type="checkbox" id="interest2" name="interest2">
+            <label for="interest2">Designer</label>
+            <input type="checkbox" id="interest3" name="interest3">
+            <label for="interest3">Analyst</label>
+          </div>
+          <div class="register-group">
+            <label class="subscribe-label">Subscribe to AskUI:</label>
+            <label class="toggle-switch">
+              <input type="checkbox" unchecked>
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="register-group">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+            <div id="success-message" class="success-message"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="images-page" class="page">
+      <div class="carousel">
+        <div class="slide">
+          <img src="images/askui-cucumber.png" alt="AskUI - Cucumber">
+        </div>
+        <div class="slide">
+          <img src="images/askui-pipedream.jpeg" alt="AskUI - Pipedream">
+        </div>
+        <div class="slide">
+          <img src="images/askui-playwright.jpeg" alt="AskUI - Playwright">
+        </div>
+        <div class="slide">
+          <img src="images/askui-selenium.jpeg" alt="AskUI - Selenium">
+        </div>
+      </div>
+      <div class="slide-indicators"></div>
+    </div>
   </main>
   <footer>
     <!-- Add your footer content here -->

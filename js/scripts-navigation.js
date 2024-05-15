@@ -1,5 +1,5 @@
 window.onload = function () {
-  showFormPage();
+  showCalculatorPage();
 };
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -16,19 +16,19 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function hideAllPages() {
-  document.getElementById("form-page").style.display = "none";
   document.getElementById("calculator-drag-drop-page").style.display = "none";
+  document.getElementById("register-page").style.display = "none";
   document.getElementById("images-page").style.display = "none";
-}
-
-function showFormPage() {
-  hideAllPages();
-  document.getElementById("form-page").style.display = "block";
 }
 
 function showCalculatorPage() {
   hideAllPages();
   document.getElementById("calculator-drag-drop-page").style.display = "block";
+}
+
+function showRegisterPage() {
+  hideAllPages();
+  document.getElementById("register-page").style.display = "block";
 }
 
 function showImagesPage() {
