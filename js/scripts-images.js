@@ -42,3 +42,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
   updateSlideIndicators();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const mouseElement = document.querySelector('.mouseElement');
+
+  function handleLeftDoubleClick(e) {
+    if (e.button === 0) {
+      console.log('Double Left click detected');
+      mouseElement.style.backgroundColor = 'lightgreen';
+      mouseElement.textContent = `Double Clicked Left Mouse Key`;
+    }
+  }
+
+  function handleRightDoubleClick(e) {
+    e.preventDefault();
+    if (e.button === 2) {
+      console.log(`Double Right click detected`);
+      mouseElement.style.backgroundColor = 'lightcoral';
+      mouseElement.textContent = 'Double Clicked Right Mouse Key';
+    }
+  }
+
+  function handleMiddleDoubleClick(e) {
+    if (e.button === 1) {
+      console.log('Double Middle click detected');
+      mouseElement.style.backgroundColor = 'lightblue';
+      mouseElement.textContent = 'Double Clicked Middle Mouse Key';
+    }
+  }
+
+  mouseElement.addEventListener('dblclick', handleLeftDoubleClick);
+  mouseElement.addEventListener('contextmenu', handleRightDoubleClick);
+  mouseElement.addEventListener('mousedown', handleMiddleDoubleClick);
+});
