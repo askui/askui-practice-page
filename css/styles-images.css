@@ -1,18 +1,27 @@
 .carousel {
+  overflow: hidden;
   display: flex;
+  align-items: center;
+  user-select: none;
+  cursor: grab;
+  touch-action: pan-x;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   margin-top: 20px;
 }
 
-.slide {
-  scroll-snap-align: start;
-  flex: 0 0 100%;
+.carousel.active {
+  cursor: grabbing;
 }
 
 .carousel img {
   width: 100%;
   height: auto;
+}
+
+.slide {
+  min-width: 100%;
+  transition: transform 0.3s ease;
 }
 
 .slide-indicators {
