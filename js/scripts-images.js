@@ -101,12 +101,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', () => {
   const mouseElement = document.querySelector('.mouseElement');
+  
+  function updateMouseElement(backgroundColor, textContent) {
+    mouseElement.style.backgroundColor = backgroundColor;
+    mouseElement.textContent = textContent;
+    mouseElement.style.color = 'black';
+  }
 
   function handleLeftDoubleClick(e) {
     if (e.button === 0) {
       console.log('Double Left click detected');
-      mouseElement.style.backgroundColor = 'lightgreen';
-      mouseElement.textContent = 'Double Clicked Left Mouse Key';
+      updateMouseElement('lightgreen', 'Double Clicked Left Mouse Key');
     }
   }
 
@@ -114,16 +119,14 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
     if (e.button === 2) {
       console.log('Double Right click detected');
-      mouseElement.style.backgroundColor = 'lightcoral';
-      mouseElement.textContent = 'Double Clicked Right Mouse Key';
+      updateMouseElement('lightcoral', 'Double Clicked Right Mouse Key');
     }
   }
 
   function handleMiddleDoubleClick(e) {
     if (e.button === 1) {
       console.log('Double Middle click detected');
-      mouseElement.style.backgroundColor = 'lightblue';
-      mouseElement.textContent = 'Double Clicked Middle Mouse Key';
+      updateMouseElement('lightblue', 'Double Clicked Middle Mouse Key');
     }
   }
 
