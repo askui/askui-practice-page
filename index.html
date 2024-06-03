@@ -95,6 +95,28 @@
             <label for="otp">OTP:</label>
             <input type="text" id="otp" placeholder="Enter your OTP" name="otp" required>
           </div>
+
+          <div class="register-group">
+            <label for="birthdate">Date of Birth:</label>
+            <div class="birthdate-inputs">
+              <div class="birthdate-input">
+                <select id="birth-date" name="birth-date" required>
+                  <option value="" disabled selected>Select Date</option>
+                </select>
+              </div>
+              <div class="birthdate-input">
+                <select id="birth-month" name="birth-month" required>
+                  <option value="" disabled selected>Select Month</option>
+                </select>
+              </div>
+              <div class="birthdate-input">
+                <select id="birth-year" name="birth-year" required>
+                  <option value="" disabled selected>Select Year</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
           <div class="register-group">
             <label for="interests">Profile:</label>
             <input type="checkbox" id="interest1" name="interest1">
