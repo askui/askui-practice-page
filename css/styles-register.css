@@ -10,6 +10,7 @@
    margin-bottom: 20px;
    display: flex;
    align-items: center;
+   position: relative;
  }
 
  .register-group label {
@@ -26,13 +27,14 @@
  }
 
  .register-group input[type="checkbox"] {
-  transform: scale(1.5); 
-  margin-right: -20px;
-}
+   transform: scale(1.5);
+   margin-right: -20px;
+   accent-color: #973cbd;
+ }
 
  .register-group button {
-  margin-right: 10px;
-}
+   margin-right: 10px;
+ }
 
  .toggle-switch {
    display: inline-block;
@@ -73,9 +75,27 @@
  }
 
  input:checked+.slider {
-   background-color: #2196F3;
+   background-color: #973cbd;
  }
 
  input:checked+.slider:before {
    transform: translateX(25px) translateY(-50%);
+ }
+
+ .register-group .birthdate-inputs {
+   display: flex;
+   align-items: center;
+   width: 20rem;
+ }
+
+ .register-group .birthdate-input {
+   flex: 1;
+   margin-right: 5px;
+ }
+
+ .register-group .birthdate-input select {
+   width: 100%;
+   padding: 10px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
  }

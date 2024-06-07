@@ -100,37 +100,93 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const mouseElement = document.querySelector('.mouseElement');
-  
-  function updateMouseElement(backgroundColor, textContent) {
-    mouseElement.style.backgroundColor = backgroundColor;
-    mouseElement.textContent = textContent;
-    mouseElement.style.color = 'black';
+  const mouseElementDouble = document.querySelector('.mouseElementDouble');
+
+  function updateMouseElementDouble(backgroundColor, textContent) {
+    mouseElementDouble.style.backgroundColor = backgroundColor;
+    mouseElementDouble.textContent = textContent;
+    mouseElementDouble.style.color = 'black';
   }
 
+  let lastLeftClickTime = 0;
+  let lastRightClickTime = 0;
+  let lastMiddleClickTime = 0;
+
   function handleLeftDoubleClick(e) {
-    if (e.button === 0) {
+    const currentTime = new Date().getTime();
+    const timeDiff = currentTime - lastLeftClickTime;
+    lastLeftClickTime = currentTime;
+
+    if (e.button === 0 && timeDiff < 400) { 
       console.log('Double Left click detected');
-      updateMouseElement('lightgreen', 'Double Clicked Left Mouse Key');
+      updateMouseElementDouble('lightgreen', 'Double Left click detected');
     }
   }
 
   function handleRightDoubleClick(e) {
     e.preventDefault();
-    if (e.button === 2) {
+    const currentTime = new Date().getTime();
+    const timeDiff = currentTime - lastRightClickTime;
+    lastRightClickTime = currentTime;
+
+    if (e.button === 2 && timeDiff < 400) { 
       console.log('Double Right click detected');
-      updateMouseElement('lightcoral', 'Double Clicked Right Mouse Key');
+      updateMouseElementDouble('lightcoral', 'Double Right click detected');
     }
   }
 
   function handleMiddleDoubleClick(e) {
-    if (e.button === 1) {
+    const currentTime = new Date().getTime();
+    const timeDiff = currentTime - lastMiddleClickTime;
+    lastMiddleClickTime = currentTime;
+
+    if (e.button === 1 && timeDiff < 400) { 
       console.log('Double Middle click detected');
-      updateMouseElement('lightblue', 'Double Clicked Middle Mouse Key');
+      updateMouseElementDouble('lightblue', 'Double Middle click detected');
     }
   }
 
-  mouseElement.addEventListener('dblclick', handleLeftDoubleClick);
-  mouseElement.addEventListener('contextmenu', handleRightDoubleClick);
-  mouseElement.addEventListener('mousedown', handleMiddleDoubleClick);
+  mouseElementDouble.addEventListener('click', (e) => {
+    if (e.button === 0) {
+      lastLeftClickTime = new Date().getTime();
+    } else if (e.button === 1) {
+      lastMiddleClickTime = new Date().getTime();
+    } else if (e.button === 2) {
+      lastRightClickTime = new Date().getTime();
+    }
+  });
+
+  mouseElementDouble.addEventListener('dblclick', handleLeftDoubleClick);
+  mouseElementDouble.addEventListener('contextmenu', handleRightDoubleClick);
+  mouseElementDouble.addEventListener('mousedown', handleMiddleDoubleClick);
+
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const mouseElementSingle = document.querySelector('.mouseElementSingle');
+
+  function updateMouseSingleElement(backgroundColor, textContent) {
+    mouseElementSingle.style.backgroundColor = backgroundColor;
+    mouseElementSingle.textContent = textContent;
+    mouseElementSingle.style.color = 'black';
+  }
+
+  mouseElementSingle.addEventListener('mousedown', (e) => {
+    if (e.button === 0) {
+      console.log('Single Left click detected');
+      updateMouseSingleElement('lightgreen', 'Single Left click detected');
+    } else if (e.button === 1) {
+      console.log('Single Middle click detected');
+      updateMouseSingleElement('lightblue', 'Single Middle click detected');
+    } else if (e.button === 2) {
+      console.log('Single Right click detected');
+      updateMouseSingleElement('lightcoral', 'Single Right click detected');
+    }
+  });
+
+  mouseElementSingle.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+    handleClick(2);
+  });
+
 });
