@@ -21,11 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function handleTouchEnd(e) {
     const endX = e.changedTouches[0].clientX;
     const diff = startX - endX;
-    if (diff > 0) {
-      carousel.scrollLeft += carousel.offsetWidth;
-    } else {
-      carousel.scrollLeft -= carousel.offsetWidth;
-    }
+    carousel.scrollLeft += diff > 0 ? carousel.offsetWidth : -carousel.offsetWidth;
     updateSlideIndicators();
   }
 
@@ -117,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const timeDiff = currentTime - lastLeftClickTime;
     lastLeftClickTime = currentTime;
 
-    if (e.button === 0 && timeDiff < 400) { 
+    if (e.button === 0 && timeDiff < 400) {
       console.log('Double Left click detected');
       updateMouseElementDouble('lightgreen', 'Double Left click detected');
     }
@@ -129,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const timeDiff = currentTime - lastRightClickTime;
     lastRightClickTime = currentTime;
 
-    if (e.button === 2 && timeDiff < 400) { 
+    if (e.button === 2 && timeDiff < 400) {
       console.log('Double Right click detected');
       updateMouseElementDouble('lightcoral', 'Double Right click detected');
     }
@@ -140,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const timeDiff = currentTime - lastMiddleClickTime;
     lastMiddleClickTime = currentTime;
 
-    if (e.button === 1 && timeDiff < 400) { 
+    if (e.button === 1 && timeDiff < 400) {
       console.log('Double Middle click detected');
       updateMouseElementDouble('lightblue', 'Double Middle click detected');
     }
@@ -188,5 +184,55 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
     handleClick(2);
   });
-
 });
+
+document.querySelector(".pixel-value-button").addEventListener("click", togglePixelValue);
+
+let pixelValueEnabled = false;
+let mouseMoveHandler;
+
+function togglePixelValue() {
+  const pixelValueDisplay = document.querySelector(".pixel-value-display");
+  const dimensionsDisplay = document.querySelector(".dimensions-display");
+  const button = document.querySelector(".pixel-value-button");
+
+  if (pixelValueEnabled) {
+    document.removeEventListener("mousemove", mouseMoveHandler);
+    button.textContent = "Enable Pixel Value";
+    pixelValueDisplay.textContent = '';
+    pixelValueDisplay.style.display = 'none';
+    dimensionsDisplay.innerHTML = '';
+    dimensionsDisplay.style.display = 'none';
+  } else {
+    mouseMoveHandler = function (event) {
+      const x = event.clientX;
+      const y = event.clientY;
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      const displayX = x + 10 < width - 100 ? x + 10 : x - 110;
+      const displayY = y + 10 < height - 30 ? y + 10 : y - 30;
+
+      pixelValueDisplay.textContent = `X: ${x}px, Y: ${y}px`;
+      pixelValueDisplay.style.left = `${displayX}px`;
+      pixelValueDisplay.style.top = `${displayY}px`;
+      pixelValueDisplay.style.display = 'block';
+    };
+
+    document.addEventListener("mousemove", mouseMoveHandler);
+
+    const viewportWidth = document.documentElement.clientWidth;
+    const viewportHeight = document.documentElement.clientHeight;
+    const screenWidth = window.screen.width;
+    const screenHeight = window.screen.height;
+
+    dimensionsDisplay.innerHTML = `
+            <p>Viewport Width: ${viewportWidth} px</p>
+            <p>Viewport Height: ${viewportHeight} px</p>
+            <p>Screen Width: ${screenWidth} px</p>
+            <p>Screen Height: ${screenHeight} px</p>`;
+    dimensionsDisplay.style.display = 'grid';
+    button.textContent = "Disable Pixel Value";
+  }
+  pixelValueEnabled = !pixelValueEnabled;
+}
