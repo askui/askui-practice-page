@@ -43,11 +43,12 @@
   background-color: #973cbd;
 }
 
-.mouseElementDouble {
+.mouseElementDouble,
+.mouseElementSingle {
   width: 100%;
   height: 70px;
   border: 3px solid #aaaaaa;
-  margin-top: 10px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,15 +57,37 @@
   font-size: x-large;
 }
 
-.mouseElementSingle {
-  width: 100%;
-  height: 70px;
+.pixel-value-button {
+  display: block;
+  margin: auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #973cbd;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pixel-value-display {
+  position: fixed;
+  background-color: #973cbd;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  pointer-events: none;
+  display: none;
+}
+
+.dimensions-display {
+  padding: 10px;
   border: 3px solid #aaaaaa;
+  display: none;
   margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  float: left;
-  font-size: x-large;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.dimensions-display p {
+  margin: 0;
 }
