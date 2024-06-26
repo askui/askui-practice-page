@@ -13,12 +13,14 @@
   <link rel="stylesheet" href="css/styles-navigation.css">
   <link rel="stylesheet" href="css/styles-register.css">
   <link rel="stylesheet" href="css/styles-images.css">
+  <link rel="stylesheet" href="css/styles-team.css">
   <script src="js/scripts-theme.js" defer></script>
   <script src="js/scripts-calculator.js" defer></script>
   <script src="js/scripts-drag-drop.js" defer></script>
   <script src="js/scripts-navigation.js" defer></script>
   <script src="js/scripts-register.js" defer></script>
   <script src="js/scripts-images.js" defer></script>
+  <script src="js/scripts-team.js" defer></script>
 </head>
 
 <body>
@@ -35,6 +37,8 @@
           onclick="showCalculatorPage()">Calculator</a></li>
       <li id="register-nav"><a href="#register-page" onclick="showRegisterPage()">Register</a></li>
       <li id="images-nav"><a href="#images-page" onclick="showImagesPage()">Images</a></li>
+      <li id="team-nav"><a href="#team-page" onclick="showTeamPage()">Team</a></li>
+    </ul>
     </ul>
   </nav>
 
@@ -174,6 +178,77 @@
         <div class="dimensions-display"></div>
       </div>
     </div>
+    <div id="team-page" class="page">
+      <div class="container"> 
+        <h1>Team Members</h1>
+        <div class="person">
+          <div class="info-header" onclick="toggleDropdown('dropdown-mike')">
+            <img src="images/user1.png" alt="Mike" class="avatar">
+            <h2>Mike</h2>
+          </div>
+          <div id="dropdown-mike" class="dropdown-content">
+            <p><b>Employee Details</b></p>
+            <p>Email: mike@askui.com</p>
+            <p>Designation: Web Designer</p>
+            <p>Department: Design</p>
+            <p>Location: Berlin</p>
+          </div>
+        </div>
+        <div class="person">
+          <div class="info-header" onclick="toggleDropdown('dropdown-jill')">
+            <img src="images/user2.png" alt="Jill" class="avatar">
+            <h2>Jill</h2>
+          </div>
+          <div id="dropdown-jill" class="dropdown-content">
+            <p><b>Employee Details</b></p>
+            <p>Email: jill@askui.com</p>
+            <p>Designation: Support</p>
+            <p>Department: Customer Service</p>
+            <p>Location: Remote</p>
+          </div>
+        </div>
+        <div class="person">
+          <div class="info-header" onclick="toggleDropdown('dropdown-jane')">
+            <img src="images/user3.png" alt="Jane" class="avatar">
+            <h2>Jane</h2>
+          </div>
+          <div id="dropdown-jane" class="dropdown-content">
+            <p><b>Employee Details</b></p>
+            <p>Email: jane@askui.com</p>
+            <p>Designation: Accountant</p>
+            <p>Department: Finance</p>
+            <p>Location: Berlin</p>
+          </div>
+        </div>
+        <div class="person">
+          <div class="info-header" onclick="toggleDropdown('dropdown-john')">
+            <img src="images/user4.png" alt="John" class="avatar">
+            <h2>John</h2>
+          </div>
+          <div id="dropdown-john" class="dropdown-content">
+            <p><b>Employee Details</b></p>
+            <p>Email: john@askui.com</p>
+            <p>Designation: Manager</p>
+            <p>Department: Operations</p>
+            <p>Location: Remote</p>
+          </div>
+        </div>
+        <div class="person">
+          <div class="info-header" onclick="toggleDropdown('dropdown-emma')">
+            <img src="images/user5.png" alt="Emma" class="avatar">
+            <h2>Emma</h2>
+          </div>
+          <div id="dropdown-emma" class="dropdown-content">
+            <p><b>Employee Details</b></p>
+            <p>Email: emma@askui.com</p>
+            <p>Designation: Developer</p>
+            <p>Department: IT</p>
+            <p>Location: Karlsruhe</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
   <footer>
     <!-- Add your footer content here -->
