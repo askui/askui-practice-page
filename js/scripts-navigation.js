@@ -19,6 +19,7 @@ function hideAllPages() {
   document.getElementById("calculator-drag-drop-page").style.display = "none";
   document.getElementById("register-page").style.display = "none";
   document.getElementById("images-page").style.display = "none";
+  document.getElementById("team-page").style.display = "none";
 }
 
 function showCalculatorPage() {
@@ -34,4 +35,9 @@ function showRegisterPage() {
 function showImagesPage() {
   hideAllPages();
   document.getElementById("images-page").style.display = "block";
+}
+
+function showTeamPage() {
+  hideAllPages();
+  document.getElementById("team-page").style.display = "block";
 }
