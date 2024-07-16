@@ -20,14 +20,5 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
     });
-
-    keyInput.addEventListener('input', function () {
-      const value = keyInput.value;
-      if (value.length === 1 && !isNaN(value) && value >= '1' && value <= '9') {
-        oneKeyBox.textContent = `F${value} key is pressed`;
-      } else {
-        keyInput.value = '';
-      }
-    });
   }
 });
