@@ -20,6 +20,7 @@ function hideAllPages() {
   document.getElementById("register-page").style.display = "none";
   document.getElementById("images-page").style.display = "none";
   document.getElementById("team-page").style.display = "none";
+  document.getElementById("android-page").style.display = "none";
 }
 
 function showCalculatorPage() {
@@ -40,4 +41,9 @@ function showImagesPage() {
 function showTeamPage() {
   hideAllPages();
   document.getElementById("team-page").style.display = "block";
+}
+
+function showAndroidPage() {
+  hideAllPages();
+  document.getElementById("android-page").style.display = "block";
 }
