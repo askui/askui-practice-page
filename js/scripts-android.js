@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   keyInput.addEventListener('input', function () {
     const value = keyInput.value;
-    if (/^[0-9]$/.test(value) || /^[a-zA-Z]$/.test(value)) {
+    if (/^[0-9a-zA-Z]$/.test(value)) {
       oneKeyBox.textContent = `${value} is pressed`;
     }
   });
