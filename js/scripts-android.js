@@ -29,11 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
       }
     }
-
-    else if (/^[0-9]$/.test(key)) {
-      oneKeyBox.textContent = `${key} is pressed`;
-      event.preventDefault();
-    } else if (/^[a-zA-Z]$/.test(key)) {
+    else if (/^[0-9a-zA-Z]$/.test(key)) {
       oneKeyBox.textContent = `${key} is pressed`;
       event.preventDefault();
     }
