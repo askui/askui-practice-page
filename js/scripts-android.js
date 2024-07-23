@@ -10,15 +10,35 @@ document.addEventListener('DOMContentLoaded', function () {
     keyInput.disabled = true;
     keyInput.placeholder = "Input allowed only on Android devices";
     keyInput.style.backgroundColor = "#f8d7da";
-  } else {
-    document.addEventListener('keydown', function (event) {
-      if (event.key.startsWith('F') && !isNaN(event.key.slice(1))) {
-        const keyNumber = event.key.slice(1);
-        if (keyNumber >= 1 && keyNumber <= 12) {
-          oneKeyBox.textContent = `F${keyNumber} key is pressed`;
-          event.preventDefault();
-        }
-      }
-    });
+    return;
   }
+
+  keyInput.addEventListener('input', function () {
+    if (keyInput.value.length > 1) {
+      keyInput.value = keyInput.value.slice(0, 1);
+    }
+  });
+
+  document.addEventListener('keydown', function (event) {
+    const key = event.key;
+
+    if (key.startsWith('F') && !isNaN(key.slice(1))) {
+      const keyNumber = Number(key.slice(1));
+      if (keyNumber >= 1 && keyNumber <= 12) {
+        oneKeyBox.textContent = `F${keyNumber} key is pressed`;
+        event.preventDefault();
+      }
+    }
+    else if (/^[0-9a-zA-Z]$/.test(key)) {
+      oneKeyBox.textContent = `${key} is pressed`;
+      event.preventDefault();
+    }
+  });
+
+  keyInput.addEventListener('input', function () {
+    const value = keyInput.value;
+    if (/^[0-9a-zA-Z]$/.test(value)) {
+      oneKeyBox.textContent = `${value} is pressed`;
+    }
+  });
 });
