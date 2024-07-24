@@ -4,28 +4,28 @@
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
-.input-group {
+.input-group, .input-group2, .input-group3 {
     margin-bottom: 20px;
-    display: flex; 
+    display: flex;
+    flex-direction: column; 
 }
 
-.input-group label {
-    flex: 0 0 auto; 
+.input-group label, .input-group2 label, .input-group3 label {
     font-weight: bold;
-    margin-right: 10px; 
+    margin-bottom: 10px; 
 }
 
-.input-group input {
-    flex: 1; 
+.input-group input, .input-group2 input, .input-group3 input {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    margin-bottom: 10px; 
 }
 
-.one-key-box {
+.one-key-box, .two-key-box, .three-key-box {
     width: 100%;
     height: 70px;
     border: 3px solid #aaaaaa;
@@ -35,5 +35,5 @@
     align-items: center;
     text-align: center;
     font-size: x-large;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
